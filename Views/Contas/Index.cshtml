@@ -1,0 +1,98 @@
+@model IEnumerable<ContadeLuz.Models.Conta>
+
+</br></br>
+<a href="Contas/Create" class="btn btn-primary">Nova Conta</a>
+</br></br>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Data Leitura</th>
+                <th>Numero Leitura</th>
+                <th>Quantidade Kw</th>
+                <th>Valor Conta</th>
+                <th>Data Pagamento</th>
+                <th>Media de Consumo</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.dataLeitura</td>
+                <td>@item.numeroLeitura</td>
+                <td>@item.qtdKw</td>
+                <td>@item.valorConta</td>
+                <td>@item.dataPagamento</td>
+                <td>@item.mediaConsumo</td>
+                <td><a class="btn btn-danger"
+                    href="Contas/Delete/@item.id">Delete</a> </td>
+                <td><a class="btn btn-primary" 
+                    href="Contas/Edit/@item.id">Editar</a> </td>
+            </tr>
+        }
+    </table>
+</div>
+<br>
+<hr>
+    <h3> Maior Consumo </h3>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Data Leitura</th>
+                    <th>Numero Leitura</th>
+                    <th>Quantidade Kw</th>
+                    <th>Valor Conta</th>
+                    <th>Data Pagamento</th>
+                    <th>Media de Consumo</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+                <tr>
+                    <td>@ViewBag.Maximo.id</td>
+                    <td>@ViewBag.Maximo.dataLeitura</td>
+                    <td>@ViewBag.Maximo.numeroLeitura</td>
+                    <td>@ViewBag.Maximo.qtdKw</td>
+                    <td>@ViewBag.Maximo.valorConta</td>
+                    <td>@ViewBag.Maximo.dataPagamento</td>
+                    <td>@ViewBag.Maximo.mediaConsumo</td>
+                </tr>
+        </table>
+    </div>
+<br>
+<hr>
+     <h3> Menor Consumo </h3>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Data Leitura</th>
+                    <th>Numero Leitura</th>
+                    <th>Quantidade Kw</th>
+                    <th>Valor Conta</th>
+                    <th>Data Pagamento</th>
+                    <th>Media de Consumo</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+                <tr>
+                    <td>@ViewBag.Minimo.id</td>
+                    <td>@ViewBag.Minimo.dataLeitura</td>
+                    <td>@ViewBag.Minimo.numeroLeitura</td>
+                    <td>@ViewBag.Minimo.qtdKw</td>
+                    <td>@ViewBag.Minimo.valorConta</td>
+                    <td>@ViewBag.Minimo.dataPagamento</td>
+                    <td>@ViewBag.Minimo.mediaConsumo</td>
+                </tr>
+        </table>
+    </div>

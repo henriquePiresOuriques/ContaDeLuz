@@ -1,0 +1,50 @@
+@model ContadeLuz.Models.Conta
+
+<div class="form-horizontal">
+    <form action="Create" method="Post">
+
+        <div class="form-group">
+            <label>Id</label>
+            <input  class="form-control"
+                    type="text" name="id"/>
+        </div>
+
+        <div class="form-group">
+            <label>Data Leitura</label>
+            <input  class="form-control"
+                    type="date" name="dataLeitura"/>
+        </div>
+
+        <div class="form-group">
+            <label>Numero Leitura</label>
+            <input  class="form-control"
+                    type="text" name="numeroLeitura"/>
+        </div>
+        <div class="form-group">
+            <label>Quantidade de Kw</label>
+            <input  class="form-control"
+                    type="text" name="qtdKw"/>
+        </div>
+        <div class="form-group">
+            <label>Valor da Conta</label>
+            <input  class="form-control"
+                    type="text" name="valorConta"/>
+        </div>
+        <div class="form-group">
+            <label>Data do Pagamento</label>
+            <input  class="form-control"
+                    type="date" name="dataPagamento"/>
+        </div>
+
+        <div class="form-group">
+            <label>Media de Consumo</label>
+            <input  class="form-control"
+                    type="text" name="mediaConsumo"/>
+        </div>
+
+
+        <input  class="btn btn-primary" 
+                type="submit" value="Salvar"/>
+
+    </form>
+</div>
